@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StudentHub</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+<style>
+body {
+background: url("../img/bg-city.jpg");
+}
+.jumbotron {
+background-color: royalblue;
+height: 1000px;
+}
+#banner {
+font-family: meatloaf regular;
+font-size: 100px;
+color: white;
+text-shadow: black 2px 2px;
+}
+#col1 {
+background-size: 600px 500px;
+background-repeat: no-repeat;
+height: 700px;
+z-index: -1;
+}
+button {
+color: black;
+height: 50px;
+width: 150px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="jumbotron">
+<h1 id="banner" align="center">Welcome to StudentHub</h1>
+<div class="col-md-12">
+<div id="col1" class="well">
+<h1 align="center" style="font-family:meatloaf regular;">Register</h1>
+    <div class="col-md-6">
+    <div class="form-inline">
+<form data-toggle="validator" role="form" class="form-inline" name="frmImage" enctype="multipart/form-data" action="register.php" method="post" class="frmImageUpload" >
+	   <h3 style="font-size: 30pt; font-family:meatloaf regular;">Username and Password</h3>
+	   <p style="font-size:11pt;">Username:<br><input type="text" class="form-control" name="username" required></p>
+	   <div class="alert alert-danger">
+   <strong><span class="glyphicon glyphicon-exclamation-sign"></span> Duplicate username!</strong>
+	   <p style="font-size:11pt;">Password:<br><input type="password" class="form-control" name="password" required></p>
+	   <p style="font-size: 30pt; font-family: meatloaf regular;">Upload Image File:</p>
+		<div class="form-group">
+				    <img src="slcupload.jpg" class="img-circle" height="100px" width="100px" id="image" />
+					<p> 100px</p>
+					</div>
+					<div class="form-group">
+					<img src="slcupload.jpg" class="img-circle" height="50px" width="50px" id="image2" />
+					<p> 50px</p>
+					</div>
+                    <p align="center"><input style="border: 2px solid royalblue; border-radius: 5px;" name="userImage" type="file" id="img" class="inputFile"/></p>				
+                    <br>				
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-inline">
+	   <p hidden><input type="text" name="user_id"></p>
+	   <h3 style="font-size: 30pt; font-family:meatloaf regular;">User Information</h3>
+	   <p style="font-size:11pt;">First Name:<br><input type="text" class="form-control" name="fname" required></p>
+	   <p style="font-size:11pt;">Last Name:<br><input type="text" class="form-control" name="lname" required></p>
+	   <p style="font-size:11pt;">Age:<br> <input type="number" class="form-control" name="age" required></p>
+	   <p style="font-size:11pt;">School:<br><input type="text" class="form-control" name="school" required></p>
+	   <p style="font-size:11pt;">Course:<br><input type="text" class="form-control" name="course" required></p>
+	   <p><button type="submit" class="btn btn-success">Register</button>
+	   </form>
+	   <form action="../index.php">
+	   <button type="submit" class="btn btn-primary">Back</button></p>
+	   </form>
+	   
+	   </div>
+	   </div>
+</div>
+</div>
+</div>
+		            <script>
+                    document.getElementById("img").onchange = function () {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                    document.getElementById("image").src = e.target.result;
+					document.getElementById("image2").src = e.target.result;
+                    };
+                    reader.readAsDataURL(this.files[0]);
+                    };            
+					</script>
+</body>
+</html>
